@@ -1,0 +1,30 @@
+{
+  "name": "canvas-whiteboard",
+  "version": "1.0.0",
+  "description": "A canvas whiteboard, which extend easily.",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "dependencies": {
+    "rollup": "^0.68.2",
+    "rollup-plugin-babel": "^4.1.0",
+    "rollup-plugin-typescript": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2"
+  },
+  "scripts": {
+    "dev": "./node_modules/rollup/bin/rollup -c ./rollup.config.js -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bennnis/canvas-whiteboard.git"
+  },
+  "author": "bennnis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bennnis/canvas-whiteboard/issues"
+  },
+  "homepage": "https://github.com/Bennnis/canvas-whiteboard#readme"
+}
