@@ -36,7 +36,7 @@ const _createPainterEl = (tool) => {
     _setClass(toolEl, className)
 
     let toolIcon = document.createElement('i')
-    _setClass(toolIcon, tool.icon)
+    _setClass(toolIcon, 'cw--painter__' + tool.icon)
 
     // let toolText = document.createElement('p')
     // toolText.textContent = tool.name

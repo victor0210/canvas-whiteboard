@@ -1,4 +1,5 @@
 import cw from '../src/cw'
+import pointerPainter from '../src/painters/default'
 import linePainter from '../src/painters/line'
 import clearPainter from '../src/painters/clear'
 import eraserPainter from '../src/painters/eraser'
@@ -13,6 +14,7 @@ window.onload = () => {
     cw.init({
         el: document.getElementById('for-binding'),
         tools: [
+            pointerPainter,
             linePainter,
             clearPainter,
             eraserPainter,
