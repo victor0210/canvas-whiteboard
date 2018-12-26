@@ -4,6 +4,7 @@ import clearPainter from '../src/painters/clear'
 import eraserPainter from '../src/painters/eraser'
 import resetPainter from '../src/painters/reset'
 import rectPainter from '../src/painters/rect'
+import circlePainter from '../src/painters/circle'
 
 window.cw = cw
 
@@ -16,7 +17,8 @@ window.onload = () => {
             clearPainter,
             eraserPainter,
             resetPainter,
-            rectPainter
+            rectPainter,
+            circlePainter
         ]
     })
 }

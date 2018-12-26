@@ -24,3 +24,10 @@ export const isContain = (el, targetEl) => {
 export const getImageData = (cvs) => {
     return cvs.getContext('2d').getImageData(0, 0, cvs.width, cvs.height)
 }
+
+export const setCtxDefaultConfig = (ctx) => {
+    ctx.strokeStyle = 'red';
+    ctx.lineWidth = 3;
+    ctx.lineJoin = 'round';
+    ctx.lineCap = 'round';
+}

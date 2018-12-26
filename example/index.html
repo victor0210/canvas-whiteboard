@@ -4,15 +4,57 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="../dist/bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css"/>
+
     <style>
         #for-binding {
-            width: 40%;
-            height: 400px;
-            background-color: cadetblue;
+            width: 800px;
+            height: 600px;
+            background-color: #000;
             position: relative;
-            background-image: url("http://xxndev.oss-cn-beijing.aliyuncs.com/15451133740414.png");
-            background-size: contain;
+        }
+
+        .pen {
+            background-image: url("./pencil.png");
             background-position: center;
+            background-size: contain;
+        }
+        .cursor--pen {
+            cursor: url(./pencil.png), default;
+        }
+        .clear {
+            background-image: url("./clear.png");
+            background-position: center;
+            background-size: contain;
+        }
+        .eraser {
+            background-image: url("./eraser.png");
+            background-position: center;
+            background-size: contain;
+        }
+        .cursor--eraser {
+            cursor: url(./eraser.png), default;
+        }
+        .reset {
+            background-image: url("./reset.png");
+            background-position: center;
+            background-size: contain;
+        }
+        .cursor--rect {
+            cursor: crosshair;
+        }
+        .rect {
+            background-image: url("./rect.png");
+            background-position: center;
+            background-size: contain;
+        }
+        .cursor--circle {
+            cursor: crosshair;
+        }
+        .circle {
+            background-image: url("./circle.png");
+            background-position: center;
+            background-size: contain;
         }
     </style>
 </head>

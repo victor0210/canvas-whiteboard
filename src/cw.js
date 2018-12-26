@@ -26,8 +26,9 @@ class CW {
         this.board = new Board(el)
 
         let cvsIns = this.board.$ins
+        let cvsBgIns = this.board.$insBg
 
-        this.paintTool = new PaintTool(el, cvsIns, tools)
+        this.paintTool = new PaintTool(el, cvsIns, cvsBgIns, tools)
 
         this.board.bindCanvas2El()
         this.paintTool.bindTools2El()
@@ -46,32 +47,35 @@ class CW {
         let containEmit = false
 
         _addEvent(cvsIns, 'mousedown', (e) => {
-            console.log('mousedown')
             containEmit = true
             const painter = this.paintTool.$painter
             if (painter && painter['mousedown']) {
-                painter['mousedown'](e, cvsIns, this)
+                painter['mousedown'](e, cvsIns, cvsBgIns, this)
             }
         })
         _addEvent(document, 'mousemove', (e) => {
             if (containEmit) {
-                console.log('move')
+                console.log(this.paintTool.$painter)
                 const painter = this.paintTool.$painter
-                if (painter && painter['mousemove']) painter['mousemove'](e, cvsIns, this)
+                if (painter && painter['mousemove']) painter['mousemove'](e, cvsIns, cvsBgIns, this)
             }
         })
         _addEvent(document, 'mouseup', (e) => {
             if (containEmit) {
-                console.log('up')
                 containEmit = false
                 const painter = this.paintTool.$painter
-                if (painter && painter['mouseup']) painter['mouseup'](e, cvsIns, this)
+                painter && painter['mouseup'] && painter['mouseup'](e, cvsIns, cvsBgIns, this)
+                painter && painter['complete'] && painter['complete'](e, cvsIns, cvsBgIns, this)
             }
         })
     }
 
     getCanvas() {
         return this.board.$ins
+    }
+
+    getCanvasBg() {
+        return this.board.$insBg
     }
 
     storeAction(action) {
@@ -87,8 +91,7 @@ class CW {
     }
 
     getLastAction() {
-        const cvsIns = this.board.$ins
-        return this.action.getLastAction() || new ImageData(cvsIns.width, cvsIns.height)
+        return this.action.getLastAction() || null
     }
 }
 
